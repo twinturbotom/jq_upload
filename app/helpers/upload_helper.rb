@@ -12,9 +12,9 @@ module UploadHelper
     def initialize(options)
       @options = options.reverse_merge(
         id: "fileupload",
-        aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
-        aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
-        bucket: ENV["AWS_S3_BUCKET"],
+        aws_access_key_id: ENV["S3_UPLOADER_ACCESS_KEY_ID"],
+        aws_secret_access_key: ENV["S3_UPLOADER_SECRET_ACCESS_KEY"],
+        bucket: ENV["S3_UPLOADER_BUCKET"],
         acl: "public-read",
         expiration: 10.hours.from_now,
         max_file_size: 500.megabytes,
