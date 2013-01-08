@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @cust_upload.name %>
+</p>
+
+<p>
+  <b>Cust file url:</b>
+  <%= @cust_upload.cust_file_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_cust_upload_path(@cust_upload) %> |
+<%= link_to 'Back', cust_uploads_path %>
