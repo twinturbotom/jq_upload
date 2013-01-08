@@ -1,0 +1,7 @@
+<div class="cust_upload">
+  <div class="name">File Name: <%= cust_upload.name %></div>
+  <div class="actions">
+    <%= link_to "edit", edit_cust_upload_path(cust_upload) %> |
+    <%= link_to "remove", cust_upload, :confirm => 'Are you sure?', :method => :delete %>
+  </div>
+</div>

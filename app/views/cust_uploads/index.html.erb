@@ -1,25 +1,16 @@
-<h1>Listing cust_uploads</h1>
+<h1>Upload</h1>
+<div id="cust_uploads">
+  <%= render @cust_uploads %>
+</div>
+<div class="clear"></div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Cust file url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @cust_uploads.each do |cust_upload| %>
-  <tr>
-    <td><%= cust_upload.name %></td>
-    <td><%= cust_upload.cust_file_url %></td>
-    <td><%= link_to 'Show', cust_upload %></td>
-    <td><%= link_to 'Edit', edit_cust_upload_path(cust_upload) %></td>
-    <td><%= link_to 'Destroy', cust_upload, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<%= s3_uploader_form post: cust_uploads_url, as: "cust_upload[cust_file_url]" do %>
+  <%= file_field_tag :file, multiple: true %>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Cust upload', new_cust_upload_path %>
+<script id="template-upload" type="text/x-tmpl">
+<div class="upload">
+  {%=o.name%}
+  <div class="progress"><div class="bar" style="width: 0%"></div></div>
+</div>
+</script>

@@ -11,6 +11,7 @@
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, id: "flash_#{name}" %>
       <% end %>
+      <%= link_to "Root", root_path %>
       <%= link_to "Add Painting", paintings_path %>
       <%= link_to "Upload Files", cust_uploads_path %>
       <%= yield %>

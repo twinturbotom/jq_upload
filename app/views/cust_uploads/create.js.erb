@@ -1,0 +1,5 @@
+<% if @cust_upload.new_record? %>
+  alert("Failed to upload cust_upload: <%= j @cust_upload.errors.full_messages.join(', ').html_safe %>");
+<% else %>
+  $("#cust_uploads").append("<%= j render(@cust_upload) %>");
+<% end %>
